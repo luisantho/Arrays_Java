@@ -12,19 +12,39 @@ import java.util.Arrays;
  */
 public class Ejercicio4 {
     public static void main(String[] args) {
-        
-        int matriz [][] = new int [5][5];
-        
+     int orden=5;  
+     int[][] matriz=new int[orden][orden];
+     
+    
+     
         for (int i = 0; i < matriz.length; i++) {
             for (int j = 0; j < matriz[i].length; j++) {
-                
-                //matriz[i][j] = num;
-           
+                if(i==0){
+                    matriz[i][j]=j+1;
+                }else{
+                    if(j==0){
+                    matriz[i][j]=matriz[i-1][matriz[i].length-1];
+                    }else{
+                        matriz[i][j]=matriz[i-1][j-1];
+                    }
+                }
             }
+            
+           }
+        System.out.println("Contenido Matriz:  ");
+        for (int[] cLatino1: matriz) {
+            for (int j = 0; j < matriz.length; j++) {
+                System.out.print(" | ");
+                System.out.print(cLatino1[j]);
+                System.out.print(" | ");
+                
+            }
+            System.out.println();
             
         }
         
-        System.out.println(Arrays.deepToString(matriz));
     }
-    
-}
+        
+        
+        
+    }
